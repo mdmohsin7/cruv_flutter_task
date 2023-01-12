@@ -101,10 +101,19 @@ class MultipleBerths extends StatelessWidget {
                     color: selectedBerth == berths[1].berthNumber
                         ? const Color(0xFF0096FF)
                         : const Color(0xFFCFEAFF),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(8.0),
-                      bottomRight: Radius.circular(8.0),
-                    ),
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: isInverted
+                            ? const Radius.circular(8.0)
+                            : Radius.zero,
+                        bottomRight: isInverted
+                            ? const Radius.circular(8.0)
+                            : Radius.zero,
+                        topLeft: !isInverted
+                            ? const Radius.circular(8.0)
+                            : Radius.zero,
+                        topRight: !isInverted
+                            ? const Radius.circular(8.0)
+                            : Radius.zero),
                   ),
                   height: 65,
                   width: 60,
